@@ -4,10 +4,16 @@
 
 GPLv3
 
+Built on top of
+[Ethers.js](https://docs.ethers.io/ethers.js/html/index.html)
+[Express & ES6 REST API Boilerplate](https://github.com/developit/express-es6-rest-api)
+
+<i>Used frameworks & other included packages are properties of their respective developers and/or owners & are licensed by them</i>
+
 ### Get started
 
 ```bash
-# Developed & tested in Node.js 8.9.4
+# Developed & tested in Node.js 8.9.4 & Ubuntu server environment
 
 ## Installation
 
@@ -46,7 +52,7 @@ curl -X POST -H 'Content-Type: application/json' http://YOUR_HOST/api/transactio
 # In Production Environments always use HTTPS
 
 # as YOUR_HOST use your URL or IP or Localhost or Cloud Host,
-depending where your Node.js runs -> example: http://127.0.0.1/Ethereum-Nodejs-RESTful-API/api/...
+# depending where your Node.js runs -> example: http://127.0.0.1/Ethereum-Nodejs-RESTful-API/api/...
 
 # as YOUR_ETHEREUM_ADDRESS use a valid Ethereum address (also known as public key)
 # or just create one as shown above
@@ -60,5 +66,3 @@ depending where your Node.js runs -> example: http://127.0.0.1/Ethereum-Nodejs-R
 # https://addons.mozilla.org/en-US/firefox/addon/rested/
 
 ```
-
-Credits, links & info about used packages + more documentation, coming soon..
