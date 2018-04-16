@@ -1,0 +1,13 @@
+{
+	"network": {
+		"API": {
+			"routeGroup": {
+				"exampleRoutesGroup": "rinkeby",
+				"TXN": "ropsten"
+			},
+			"routeSingle": {
+				"exampleRouteSingle": "rinkeby"
+			}
+		}
+	}
+}
