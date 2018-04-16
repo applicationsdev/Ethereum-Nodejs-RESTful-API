@@ -33,5 +33,20 @@ export default ({ config }) => {
 		}
 	});
 
+	api.get('/getBalance/:address', (req, res) => {
+		
+		provider.getBalance(req.params.address).then(
+			
+			// Promise has succeeded to resolve the request
+			(balance) => {
+				let ETH_Balance = ethers.utils.formatEther(balance);
+				res.status(200).json({ETH_Balance});
+			},
+			
+			// Promise failed
+			() => { res.status(404).json("Invalid address or not found"); }
+	    );
+	});
+	
 	return api;
 };
