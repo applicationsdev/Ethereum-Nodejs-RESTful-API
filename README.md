@@ -1,11 +1,13 @@
 ### Ethereum RESTful API operations in Node.js
 
-@applicationsdev
+by @applicationsdev
 
 GPLv3
 
 Built on top of
+
 [Ethers.js](https://docs.ethers.io/ethers.js/html/index.html)
+
 [Express & ES6 REST API Boilerplate](https://github.com/developit/express-es6-rest-api)
 
 <i>Used frameworks & other included packages are properties of their respective developers and/or owners & are licensed by them</i>
@@ -25,13 +27,20 @@ cd Ethereum-Nodejs-RESTful-API
 # Install dependencies
 npm install
 
-# Start forking
+# Start forking the code & create or customize API routes, middleware, etc.
 rm -rf .git && git init
 
 #
 
 ## Testing
 ## (Development Environment)
+
+# To configure the Ethereum networks that your app connects with
+# use my Ethereum networks master config feature
+# at ../src/ethconfig.json
+# example:
+# set the "TXN" property from "ropsten" to "rinkeby",
+# or create your own customized settings
 
 # Start development live-reload server
 PORT=8080 npm run dev
