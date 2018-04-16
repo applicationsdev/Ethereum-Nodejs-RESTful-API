@@ -11,6 +11,7 @@ let provider = providers.getDefaultProvider('ropsten');
 let Wallet = ethers.Wallet;
 
 export default ({ config }) => {
+	
 	let api = Router();
 	
 	api.get('/createWallet', (req, res) => {
@@ -46,6 +47,33 @@ export default ({ config }) => {
 			// Promise failed
 			() => { res.status(404).json("Invalid address or not found"); }
 	    );
+	});
+	
+	api.post('/transaction/:privateKey/:destination/:amount', (req, res) => {
+		
+		// Sender's account
+		let walletOfSender = new Wallet(req.params.privateKey);
+		
+		// Choose network
+		walletOfSender.provider = providers.getDefaultProvider('ropsten');
+		
+		// TXN amount
+		let amount = ethers.utils.parseEther(req.params.amount);
+		
+		// Send TXN execution request
+		let sendEthPromise = walletOfSender.send(req.params.destination, amount);
+
+		sendEthPromise.then(
+			
+			// Promise has succeeded to resolve the request
+			(transactionHash) => {
+				let ETH_TXN_Hash = transactionHash;
+				res.status(200).json({ETH_TXN_Hash});
+			},
+			
+			// Promise failed
+			() => { res.status(501).json("Check your wallet's balance - Server was not able to resolve this request"); }
+		);
 	});
 	
 	return api;
